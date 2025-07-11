@@ -1,0 +1,10 @@
+name = "wobblybrian"
+compatibility_date = "2025-06-24"
+
+routes = [
+  { pattern = "wobblybrian.xyz", custom_domain = true },
+  { pattern = "www.wobblybrian.xyz", custom_domain = true },
+]
+
+[assets]
+directory = "./public"

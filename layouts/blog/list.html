@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<div class="article-meta">
+  <h1 id="title">{{ .Title | markdownify }}</h1>
+</div>
+
+{{ .Content }}
+
+  {{ $pages := .Pages }}
+  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+  {{ range (where $pages "Section" "!=" "") }}
+
+  <article class="post">
+    <h2><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2> 
+    <p class="date">{{ .Date.Format "2006/01/02" }}</p>
+  </article>
+
+  {{ end }}
+
+{{ end }}

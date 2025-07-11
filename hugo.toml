@@ -1,0 +1,29 @@
+baseurl = "https://wobblybrian.xyz"
+languageCode = "en-ie"
+title = "wobbly brian"
+
+[params]
+description = "My website"
+
+[permalinks]
+blog = "/blog/:year/:month/:day/:slug/"
+
+[outputs]
+home = "HTML"
+
+[[menu.main]]
+name = "Home"
+url = ""
+weight = 1
+
+[[menu.main]]
+name = "Blog"
+url = "/blog"
+weight = 2
+
+[markup]
+  [markup.goldmark.extensions]
+    [markup.goldmark.extensions.extras.superscript]
+          enable = true
+    [markup.goldmark.parser]
+          wrapStandAloneImageWithinParagraph = false

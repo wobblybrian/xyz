@@ -1,0 +1,14 @@
+<header>
+
+  <a id="logo" href="/">
+    <img src="/wb.svg">
+  </a>
+
+  <nav>
+    <ul class="menu">
+      {{ range .Site.Menus.main }}
+      <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>
