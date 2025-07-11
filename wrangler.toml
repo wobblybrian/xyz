@@ -1,5 +1,5 @@
 name = "wobblybrian"
-compatibility_date = "2025-06-24"
+compatibility_date = "2025-07-11"
 
 routes = [
   { pattern = "wobblybrian.xyz", custom_domain = true },
