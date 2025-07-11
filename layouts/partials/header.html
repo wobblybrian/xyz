@@ -4,7 +4,7 @@
     <img src="/wb.svg">
   </a>
 
-  <nav>
+  <nav role="navigation">
     <ul class="menu">
       {{ range .Site.Menus.main }}
       <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>

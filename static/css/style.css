@@ -43,17 +43,17 @@ code {
 
 /* Page Text */
 
-main > p {
+.wrapper > p {
   margin-block: 1lh;
   max-width: 70ch;
 }
 
-main li {
+.wrapper li {
   margin-block: 1lh;
 }
 
-main > h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1em;
+.wrapper > h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
   line-height: 1.2;
 }
 
@@ -73,6 +73,10 @@ body {
 
 main {
   flex: 1;
+}
+
+.wrapper {
+    margin-block: 1lh;
 }
 
 /* Header */
@@ -134,7 +138,12 @@ footer p {
 /* Post */
 
 .post {
-  margin-block: 1em;
+  margin-bottom: 1lh;
+  padding: 1.5em 1em;
+  border: 1px solid rgb(229, 229, 229);
+  &:last-child {
+    margin: 0;
+  }
 }
 
 .post h2 {

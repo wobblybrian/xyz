@@ -12,14 +12,8 @@ blog = "/blog/:year/:month/:day/:slug/"
 home = "HTML"
 
 [[menu.main]]
-name = "Home"
-url = ""
-weight = 1
-
-[[menu.main]]
 name = "Blog"
 url = "/blog"
-weight = 2
 
 [markup]
   [markup.goldmark.extensions]

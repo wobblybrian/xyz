@@ -1,13 +1,14 @@
 {{ define "main" }}
 
 <div class="article-meta">
-  <h1 id="title">{{ .Title | markdownify }}</h1>
+  <h1>{{ .Title | markdownify }}</h1>
 </div>
 
-{{ .Content }}
+<div class="wrapper">
+
+  {{ .Content }}
 
   {{ $pages := .Pages }}
-  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
   {{ range (where $pages "Section" "!=" "") }}
 
   <article class="post">
@@ -16,5 +17,7 @@
   </article>
 
   {{ end }}
+
+</div>
 
 {{ end }}
