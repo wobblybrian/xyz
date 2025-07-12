@@ -1,14 +1,33 @@
 <header>
+  <div class="masthead">
+      
+    <a id="logo" href="/">
+      <img src="/wb.svg">
+    </a>
 
-  <a id="logo" href="/">
-    <img src="/wb.svg">
-  </a>
+    <nav role="navigation">
+      <ul class="menu">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
 
-  <nav role="navigation">
-    <ul class="menu">
-      {{ range .Site.Menus.main }}
-      <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-      {{ end }}
-    </ul>
-  </nav>
+    <button id="menu-button" aria-label="Menu" onclick="mobileMenu()">Menu</button>
+
+  </div>
+
+  <div id="mobile-menu">
+    <nav role="navigation">
+      <ul class="mobile-nav">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <p id="silly" title="meow">:3</p>
+
+  </div>
+
 </header>

@@ -4,7 +4,7 @@ title: Home
 
 # Welcome
 
-This is just a simple web presence with very minimal styling. I plan to use this website as a playground to experiment with CSS away from my personal website.
+This is just a simple web presence featuring a [blog](/blog) and homepage. I plan to use this website as a playground to experiment with CSS away from my personal website.
 
 ## About me
 

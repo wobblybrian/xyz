@@ -1,11 +1,11 @@
 {{ define "main" }}
 
+<div class="wrapper">
+
 <div class="article-meta">
   <h1>{{ .Title | markdownify }}</h1>
   <p class="date">{{ .Date.Format "2006/01/02" }}</p>
 </div>
-
-<div class="wrapper">
 
   {{ .Content }}
 
