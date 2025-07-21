@@ -4,6 +4,7 @@
 
   <div class="article-meta">
     <h1>{{ .Title | markdownify }}</h1>
+    <p>{{ .Param "description" }}</p>
   </div>
 
   {{ .Content }}
@@ -13,7 +14,7 @@
 
   <article class="post">
     <h2><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></h2> 
-    <p class="date">{{ .Date.Format "2006/01/02" }}</p>
+    <p class="date">{{ .Date.Format "January 2, 2006"  }}</p>
   </article>
 
   {{ end }}
