@@ -1,4 +1,20 @@
-@import url('space-grotesk.css');
+@font-face {
+  font-family: 'SpaceGrotesk-Variable';
+  src: url('../fonts/SpaceGrotesk-Variable.woff2') format('woff2'),
+       url('../fonts/SpaceGrotesk-Variable.woff') format('woff'),
+       url('../fonts/SpaceGrotesk-Variable.ttf') format('truetype');
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter-Variable';
+  src: url('../fonts/Inter-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
 
 /* Reset */
 
@@ -20,7 +36,6 @@ img, picture, video, canvas, svg {
 }
 
 :root {
-
   /* Font */
   --heading: "SpaceGrotesk-Variable";
 
@@ -32,6 +47,19 @@ img, picture, video, canvas, svg {
   --accent: rgb(255, 255, 255);
   --background: rgb(255, 229, 244);
   --border: rgb(0, 0, 0); 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  /* Text colours */
+  --text: rgb(225, 225, 225);
+  --text-2: rgb(155, 155, 155);
+
+  /* UI colours */
+  --accent: rgb(0, 0, 0);
+  --background: rgb(29, 29, 29);
+  --border: rgb(255, 255, 255); 
+}
 }
 
 /* Site Text */
@@ -48,6 +76,37 @@ h6 {
   overflow-wrap: break-word;
 }
 
+h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+h5 {
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+h6 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+
 a {
   color: var(--text);
   &:hover {
@@ -56,16 +115,13 @@ a {
 }
 
 code {
-  background-color: var(--white);
+  user-select: all;
 }
 
 /* Page Content */
 
 .wrapper h1, h2, h3, h4, h5, h6 {
-  margin-block: 2rem;
-  &:has(+ p) {
-    margin-top: 0;
-  }
+  margin-block: 1.5lh;
 }
 
 .wrapper > p {
@@ -74,6 +130,10 @@ code {
   &:first-of-type {
     margin-top: 0;
   }
+}
+
+.wrapper img {
+  margin-block: 1lh;
 }
 
 .wrapper li {
@@ -88,13 +148,21 @@ main {
 
 body {
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter-Variable", Arial, Helvetica, sans-serif;
   color: var(--text);
   background-color: var(--background);
   line-height: 1.5;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+.about {
+  text-align: center;
+}
+
+.about h1 {
+  margin-top: 0;
 }
 
 .wrapper {
@@ -107,10 +175,13 @@ body {
 /* Header */
 
 header {
+  position: sticky;
+  top: 0;
   background-color: var(--accent);
   padding-inline: 1rem;
   padding-block: 1rem;
   border-bottom: 1px solid var(--border);
+  z-index: 10;  
 }
 
 .masthead {
@@ -158,16 +229,14 @@ header li a:hover {
 
 /* Page info */
 
-.article-meta {
+.info {
   margin-bottom: 3rem;
   padding: 2rem;
-  margin-inline: -2rem;
   background-color: var(--accent);
   border: 1px solid var(--border);
-  transition: all 100ms;
 }
 
-.article-meta h1 {
+.info h1 {
   margin-top: 0;
   margin-bottom: 1rem;
   &:last-child {
@@ -175,9 +244,61 @@ header li a:hover {
   }
 }
 
-.article-meta p {
+.info h2 {
+  margin-bottom: 0;
+}
+
+.info p {
   font-family: var(--heading);
   color: var(--text-2);
+}
+
+
+/* Page Content */
+
+.social h2 {
+  margin-top: 0;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.social a {
+  aspect-ratio: 2 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent);
+  font-size: 1.3rem;
+  font-family: var(--heading);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  &:hover {
+    color: var(--accent);
+    background-color: var(--border);
+  }
+}
+
+#blog {
+  animation: annoy 1s ease-in-out both alternate infinite;
+}
+
+@keyframes annoy {
+  100% {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 0 16px 0 var(--accent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #blog {
+    animation: none;
+  }
 }
 
 /* Post */
@@ -215,7 +336,7 @@ header li a:hover {
 
 footer {
   border-top: 1px solid var(--border);
-  padding: 2rem;
+  padding: 3rem;
 }
 
 footer p {
@@ -228,9 +349,14 @@ footer p {
 
 /* Media Queries */
 
-@media screen and (max-width: 56rem) {
-  .article-meta {
-    margin-inline: 0;
-    text-align: center;
+@media screen and (max-width: 40rem) {
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  .social-grid {
+    grid-template-columns: 1fr;
   }
 }

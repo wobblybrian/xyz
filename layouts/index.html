@@ -1,9 +1,21 @@
 {{ define "main" }}
 
-<div class="wrapper">
-  
+  <div class="wrapper">
+
+  <section class="social">
+    <h2>Find me on...</h2>
+
+    <div class="social-grid">
+      <a id="blog" href="/blog">My blog!!! :3</a>
+      {{ range .Site.Menus.social }}
+        <a href="{{ .URL | relURL }}" target="_blank">{{ .Name }}</a>
+      {{ end }}
+    </div>
+
+  </section>
+
   {{ .Content }}
 
-</div>
+  </div>
 
 {{ end }}

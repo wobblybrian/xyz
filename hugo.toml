@@ -5,9 +5,6 @@ title = "wobbly brian"
 [params]
 description = "My website"
 
-[permalinks]
-blog = "/blog/:year/:month/:day/:slug/"
-
 [outputs]
 home = "HTML"
 
@@ -20,6 +17,41 @@ weight = 1
 name = "Blog"
 url = "/blog"
 weight = 2
+
+[[menu.social]]
+name = "Bluesky"
+url = "https://bsky.app/profile/did:plc:waj6pke4gnh3qsjujzhp6ehn"
+weight = 1
+
+[[menu.social]]
+name = "GitHub"
+url = "https://github.com/wobblybrian"
+weight = 2
+
+[[menu.social]]
+name = "YouTube"
+url = "https://youtube.com/@wobblybrian"
+weight = 3
+
+[[menu.social]]
+name = "Instagram"
+url = "https://instagram.com/wobbly.brian"
+weight = 4
+
+[[menu.social]]
+name = "Reddit"
+url = "https://reddit.com/user/wobblybrian"
+weight = 5
+
+[[menu.social]]
+name = "Mastodon"
+url = "https://mastodon.social/@wobblybrian"
+weight = 6
+
+[[menu.social]]
+name = "SoundCloud"
+url = "https://soundcloud.com/wobblybrian"
+weight = 7
 
 [markup]
   [markup.goldmark.extensions]
