@@ -10,4 +10,4 @@ I like tech and music. I occasionally play Nintendo games or Minecraft.
 
 ## What is this website for?
 
-This is just a simple web presence featuring a [blog](/blog) and homepage. I plan to use this website as a playground to experiment with CSS away from my personal website.
+This is just a simple web presence featuring a [blog](/blog) and homepage. I plan to use this website as a playground to experiment with CSS away from my personal website. :D
